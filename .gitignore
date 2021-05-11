@@ -1,0 +1,11 @@
+# tiddlywiki --build
+.build
+output
+build
+docs
+
+# tiddlers
+tiddlers/system/Import.tid
+
+# tmp
+tmp

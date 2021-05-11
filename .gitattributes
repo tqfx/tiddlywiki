@@ -1,0 +1,14 @@
+.gitattributes      eol=lf
+.gitignore          eol=lf
+
+license     eol=lf
+Makefile    eol=lf
+Dockerfile  eol=lf
+
+*.info      eol=lf
+*.files     eol=lf
+*.tid       eol=lf
+
+*.yml       eol=lf
+*.json      eol=lf
+*.md        eol=lf

@@ -1,0 +1,13 @@
+{
+    "tree": ".",
+    "bindInfo": {
+        "port": 8090,
+        "bindWildcard": true,
+        "enableIPv6": true
+    },
+    "putsaver": {
+        "backupFolder": "./backups",
+        "gzipBackups": true
+    },
+    "$schema": "./settings-2-2.schema.json"
+}
