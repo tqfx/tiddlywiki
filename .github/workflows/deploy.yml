@@ -36,17 +36,14 @@ jobs:
         env:
           source: ./
           output: build
-          files: files
         run: |
           tiddlywiki $source --output $output --build
-          mv -t $output $files
           for i in `ls -A`; do \
           if [ "$i" == ".git" ]; then continue; fi;\
           if [ "$i" == "$output" ]; then continue; fi;\
           rm -rf $i; done
           for i in `ls -A $output`; do \
           mv -t . $output/$i; done
-          cp -t static -r $files
 
       - name: Deploy
         shell: bash
