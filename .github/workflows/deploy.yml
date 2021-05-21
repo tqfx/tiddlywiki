@@ -1,0 +1,71 @@
+
+name: Deploy
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install
+        shell: bash
+        run: |
+          npm install -g tiddlywiki
+
+      - name: Build
+        shell: bash
+        env:
+          source: ./
+          output: build
+          files: files
+        run: |
+          tiddlywiki $source --output $output --build
+          mv -t $output $files
+          for i in `ls -A`; do \
+          if [ "$i" == ".git" ]; then continue; fi;\
+          if [ "$i" == "$output" ]; then continue; fi;\
+          rm -rf $i; done
+          for i in `ls -A $output`; do \
+          mv -t . $output/$i; done
+          cp -t static -r $files
+
+      - name: Deploy
+        shell: bash
+        env:
+          GPG_KEY: ${{ secrets.COMMIT_GPG_KEY }}
+          GPG_ID: ${{ secrets.COMMIT_GPG_ID }}
+          branch: gh-pages
+        run: |
+          git config user.name       "github-actions[bot]"
+          git config user.email      "59302530+tqfx@users.noreply.github.com"
+          git config user.signingkey $GPG_ID
+          git config commit.gpgsign  true
+          git config core.autocrlf   input
+          git config core.quotepath  false
+          git config core.filemode   false
+          git config core.ignorecase false
+          git config --list
+          git checkout --quiet --orphan $branch
+          git add --all
+          echo "$GPG_KEY" > $GPG_ID && gpg --import $GPG_ID && rm $GPG_ID
+          git commit --quiet --signoff --message $(git rev-parse origin/master)
+          git push --force origin $branch
