@@ -14,36 +14,31 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [15.x]
-
     steps:
       - uses: actions/checkout@v2
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '14.x'
 
-      - name: Install
+      - name: Setup
         shell: bash
         run: |
-          npm install -g tiddlywiki
+          bash scripts/setup.sh
 
       - name: Build
         shell: bash
         env:
-          source: ./
           output: build
         run: |
-          tiddlywiki $source --output $output --build
+          bash scripts/build.sh
+
           for i in `ls -A`; do \
           if [ "$i" == ".git" ]; then continue; fi;\
           if [ "$i" == "$output" ]; then continue; fi;\
           rm -rf $i; done
           for i in `ls -A $output`; do \
           mv -t . $output/$i; done
+          rmdir $output
 
       - name: Deploy
         shell: bash
