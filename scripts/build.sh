@@ -5,5 +5,6 @@ SOURCE=.
 FILES=files
 
 tiddlywiki $SOURCE --output $OUTPUT --build
-cp -r $FILES $OUTPUT || exit 0
+cp robots.txt $OUTPUT || ls *.txt
+cp -r $FILES $OUTPUT || ls || exit 0
 cp -r $FILES $OUTPUT/static || exit 0
