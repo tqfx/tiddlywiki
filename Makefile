@@ -33,4 +33,3 @@ commit: clean
 
 test:
 	@echo $(commit)
-

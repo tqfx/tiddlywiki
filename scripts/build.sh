@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
-OUTPUT=build
-SOURCE=.
-FILES=files
+OUTPUT=$1
+if [ ! $1 ]
+then
+    OUTPUT=build
+fi
 
-tiddlywiki $SOURCE --output $OUTPUT --build
+tiddlywiki . --output $OUTPUT --build
 cp robots.txt $OUTPUT || ls *.txt
-cp -r $FILES $OUTPUT || ls || exit 0
-cp -r $FILES $OUTPUT/static || exit 0
+cp -r files $OUTPUT || exit 0
+cp -r files $OUTPUT/static || exit 0
