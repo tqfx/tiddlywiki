@@ -1,13 +1,11 @@
-
 CC=tiddlywiki
 
-output=docs
+output=output
 host=0.0.0.0
-port=8090
+port=8080
 gzip=on
-commit=$(shell git rev-parse HEAD)
-pages=gh-pages
-dirs=files
+
+commit=$(shell TZ='Asia/Shanghai' date +%Y/%m/%d\ %H:%M:%S) $(shell git rev-parse HEAD)
 
 LISTEN += --listen
 LISTEN += host=$(host)
@@ -17,23 +15,22 @@ LISTEN += password=$(password)
 LISTEN += gzip=$(gzip)
 
 all:
-	$(CC) . $(LISTEN)
+	@$(CC) . $(LISTEN)
 
 run:
-	nohup $(CC) . $(LISTEN) > /dev/null 2>&1 &
+	@nohup $(CC) . $(LISTEN) > /dev/null 2>&1 &
 
-init:
-	$(CC) . --init server
+build:
+	@$(CC) . --output $(output) --build
 
 clean:
-	-git clean -f -d -X
-	-git checkout tiddlers/system/*.tid
+	@-git checkout tiddlers/system/*.tid
+	@-git clean -d -f -X
 
-help:
-	$(CC) --help
-
-install:
-	npm install -g $(CC)
+commit: clean
+	@git add -A
+	@git commit --amend --no-edit
 
 test:
 	@echo $(commit)
+

@@ -58,5 +58,5 @@ jobs:
           git checkout --quiet --orphan $branch
           git add --all
           echo "$GPG_KEY" > $GPG_ID && gpg --import $GPG_ID && rm $GPG_ID
-          git commit --quiet --signoff --message $(git rev-parse origin/master)
+          git commit --quiet --signoff --message "$(TZ='Asia/Shanghai' date +%Y/%m/%d\ %H:%M:%S) $(git rev-parse origin/master)"
           git push --force origin $branch
