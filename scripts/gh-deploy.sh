@@ -29,7 +29,7 @@ for i in `ls -A`
 do
     if [[ "$OUTPUT" =~ "$i" ]]
     then
-	continue
+        continue
     fi
     $RUN rm -r -f $i
 done
