@@ -1,23 +1,28 @@
 ninja_required_version = 1.3
 
 rule listen
-    command = tiddlywiki . --listen $in
+    command = tiddlywiki . --listen
     description = start server
 
 rule build
-    command = tiddlywiki . --build $in
+    command = tiddlywiki . --build
     description = start build
 
-rule clean
-    command = git checkout tiddlers/system/*.tid &&$
-              git clean -d -f -X
-    description = start clean
+rule clean-tiddlers
+    command = git checkout tiddlers/system/*.tid
+    description = start clean tiddlers
+
+rule clean-gitignore
+    command = git clean -d -f -X
+    description = start clean gitignore
 
 build listen: listen
     pool = console
 
 build build: build
-build clean: clean
+
+build clean-tiddlers: clean-tiddlers
+build clean-gitignore: clean-gitignore
+build clean: phony clean-tiddlers clean-gitignore
 
 default clean
-
