@@ -10,7 +10,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -28,9 +27,9 @@ jobs:
           COMMIT_GPG_KEY: ${{ secrets.COMMIT_GPG_KEY }}
           COMMIT_GPG_ID: ${{ secrets.COMMIT_GPG_ID }}
         run: |
-          npm install -g tiddlywiki
           git clone https://github.com/tqfx/scripts.git gh-scripts
           bash gh-scripts/gh-config.sh
+          npm install -g tiddlywiki
 
       - name: Deploy
         shell: bash
