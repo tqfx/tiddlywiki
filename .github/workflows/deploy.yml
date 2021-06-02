@@ -28,8 +28,9 @@ jobs:
           COMMIT_GPG_KEY: ${{ secrets.COMMIT_GPG_KEY }}
           COMMIT_GPG_ID: ${{ secrets.COMMIT_GPG_ID }}
         run: |
-          bash scripts/setup.sh
-          bash scripts/gh-config.sh
+          npm install -g tiddlywiki
+          git clone https://github.com/tqfx/scripts.git gh-scripts
+          bash gh-scripts/gh-config.sh
 
       - name: Deploy
         shell: bash
@@ -37,5 +38,5 @@ jobs:
           OUTPUT: build
           BRANCH: gh-pages
         run: |
-          bash scripts/build.sh $OUTPUT
-          bash scripts/gh-deploy.sh $OUTPUT
+          bash build.sh $OUTPUT
+          bash gh-scripts/gh-deploy.sh $OUTPUT
