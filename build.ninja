@@ -1,11 +1,11 @@
 ninja_required_version = 1.3
 
 rule listen
-    command = tiddlywiki . --listen
+    command = tiddlywiki +plugins/tiddlywiki/filesystem +plugins/tiddlywiki/tiddlyweb --listen
     description = start server
 
 rule build
-    command = tiddlywiki . --build
+    command = tiddlywiki --build index static
     description = start build
 
 rule clean-tiddlers

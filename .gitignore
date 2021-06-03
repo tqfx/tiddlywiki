@@ -9,6 +9,7 @@ tiddlers/system/Import.tid
 
 # Ninja
 .ninja_log
+.ninja_deps
 
 # tmp
 tmp

@@ -1,7 +1,7 @@
 {
     "tree": ".",
     "bindInfo": {
-        "port": 8090,
+        "port": 8080,
         "bindWildcard": true,
         "enableIPv6": true
     },

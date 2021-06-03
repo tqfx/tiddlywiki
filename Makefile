@@ -5,8 +5,8 @@ host=0.0.0.0
 port=8080
 gzip=on
 
-commit=$(shell TZ='Asia/Shanghai' date +%Y/%m/%d\ %H:%M:%S) $(shell git rev-parse HEAD)
-
+PLUGINS_SERVER += +plugins/tiddlywiki/filesystem
+PLUGINS_SERVER += +plugins/tiddlywiki/tiddlyweb
 LISTEN += --listen
 LISTEN += host=$(host)
 LISTEN += port=$(port)
@@ -15,13 +15,13 @@ LISTEN += password=$(password)
 LISTEN += gzip=$(gzip)
 
 all:
-	@$(CC) . $(LISTEN)
+	@$(CC) $(PLUGINS_SERVER) $(LISTEN)
 
 run:
-	@nohup $(CC) . $(LISTEN) > /dev/null 2>&1 &
+	@nohup $(CC) $(PLUGINS_SERVER) $(LISTEN) > /dev/null 2>&1 &
 
 build:
-	@$(CC) . --output $(output) --build
+	@$(CC) --output $(output) --build index static
 
 clean:
 	@-git checkout tiddlers/system/*.tid
@@ -30,6 +30,3 @@ clean:
 commit: clean
 	@git add -A
 	@git commit --amend --no-edit
-
-test:
-	@echo $(commit)
