@@ -1,5 +1,5 @@
 # tiddlywiki
 
-[![Deploy](https://github.com/tqfx/tiddlywiki/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/tqfx/tiddlywiki/actions/workflows/deploy.yml)
+[![gh-pages](https://github.com/tqfx/tiddlywiki/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/tqfx/tiddlywiki/actions/workflows/gh-pages.yml)
 
 The custom configuration of tqfx.
