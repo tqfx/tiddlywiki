@@ -5,7 +5,8 @@ build
 docs
 
 # tiddlers
-tiddlers/system/Import.tid
+Import.tid
+StoryList_*.tid
 
 # Ninja
 .ninja_log
