@@ -1,0 +1,10 @@
+caption: 目录
+list-after: $:/core/ui/SideBar/Open
+tags: $:/tags/SideBar
+title: $:/core/ui/SideBar/Contents
+
+<div class="tc-table-of-contents">
+
+<<toc-selective-expandable "$:/core/ui/SideBar/Contents">>
+
+</div>

@@ -1,0 +1,16 @@
+tags: tqfx
+title: tqfx
+
+<p align="center">
+<a href="..">返回</a>
+&emsp;
+<a href="static">静态</a>
+</p>
+
+<<title 宏编辑>>&emsp;<<tag $:/tags/Macro>>
+
+<<list-links [tag[$:/tags/Macro]]>>
+
+<<title 宏解释>>
+
+<<tabs [tag[$:/tags/Macro]]>>

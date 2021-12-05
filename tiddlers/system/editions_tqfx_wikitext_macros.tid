@@ -1,0 +1,83 @@
+tags: $:/tags/Macro tqfx
+title: $:/editions/tqfx/wikitext_macros
+
+\define
+title(txt:"",f:"",c:"black",bg:"lightgray",t:"''")
+$f$@@color:$c$;background-color:$bg$;$t$$txt$$t$
+@@
+\end
+
+\define
+grammar(txt:"",c:"black",bg:"white",f:"",t:"``",e:"")
+@@color:$c$;background-color:$bg$;
+<<<
+$f$$t$$txt$$t$
+<<<$e$
+@@
+\end
+\define
+
+grammar2(txt:"",c:"black",bg:"white",f:"",t:"``",e:"")
+@@color:$c$;background-color:$bg$;
+<<<.tc-big-quote
+$f$$t$$txt$$t$
+<<<$e$
+@@
+\end
+
+\define
+style(txt:"",f:"",c:"black",bg:"white",t:"")
+$f$@@color:$c$;background-color:$bg$;$t$$txt$$t$
+@@
+\end
+
+\define text-ct(txt)
+<p align="center">
+
+$txt$
+
+</p>
+\end
+
+\define code(language:"",src:"")
+<div>
+<$macrocall $name="copy-to-clipboard-above-right" src=<<__src__>>/>
+<$codeblock code=<<__src__>> language=<<__language__>>/>
+<div>
+\end
+
+\define
+img(src,attribute="",prefix:"files/images/")
+[img $attribute$[$prefix$$src$]]
+\end
+
+<$macrocall $name="copy-to-clipboard-above-right" src="""<$codeblock language="" code=""/>"""/>
+
+```html
+<$codeblock language="" code=""/>
+```
+
+<$macrocall $name="copy-to-clipboard-above-right" src="""<$macrocall $name="copy-to-clipboard-above-right" src=""/>"""/>
+
+```html
+<$macrocall $name="copy-to-clipboard-above-right" src=""/>
+```
+
+<$macrocall $name="copy-to-clipboard-above-right" src="""<p align="center">
+
+</p>
+"""/>
+
+```html
+<p align="center">
+
+</p>
+```
+
+<$macrocall $name="copy-to-clipboard-above-right" src="""$$$text/vnd.tiddlywiki>text/html
+$$$"""/>
+
+```
+$$$text/vnd.tiddlywiki>text/html
+$$$
+```

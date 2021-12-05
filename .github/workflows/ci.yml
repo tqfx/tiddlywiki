@@ -1,0 +1,32 @@
+name: ci
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+      - uses: actions/checkout@v2
+        with:
+          lfs: true
+          submodules: true
+      - run: npm install -g tiddlywiki
+      - run: bash build.sh build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: index
+          path: build
+          if-no-files-found: ignore
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: ${{ github.event.head_commit.message }}
+          disable_nojekyll: true
+          publish_branch: gh-pages
+          force_orphan: true
+          publish_dir: build

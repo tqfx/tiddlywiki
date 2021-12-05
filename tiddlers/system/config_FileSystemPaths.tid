@@ -1,0 +1,7 @@
+title: $:/config/FileSystemPaths
+
+[is[system]search-replace:g:regexp[\$:/],[]search-replace:g:regexp[/|\\],[_]addprefix[system/]]
+[tag[$:/tags/SideBar]addprefix[system/]]
+[tag[日志]addprefix[log/]]
+[tag[tqfx]addprefix[tqfx/]]
+[!has[draft.of]]

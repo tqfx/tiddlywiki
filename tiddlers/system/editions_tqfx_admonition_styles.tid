@@ -1,0 +1,43 @@
+tags: $:/tags/Stylesheet tqfx
+title: $:/editions/tqfx/admonition_styles
+
+.doc-icon-block {
+	border-left: 2px solid <<colour code-border>>;
+	padding-left: 0.6em;
+	margin-left: 3em;
+	position: relative;
+}
+
+.doc-block-icon {
+	position: absolute;
+	left: -3em;
+        top: 0.2em;
+}
+
+.doc-block-icon .tc-image-help {
+	fill: <<colour primary>>;
+}
+
+.doc-block-icon .tc-image-tip {
+	fill: <<colour primary>>;
+}
+
+.doc-block-icon .tc-image-warning {
+	fill: <<colour alert-highlight>>;
+}
+
+.doc-block-icon .tc-image-cancel-button {
+        fill: <<colour dirty-indicator>>;
+}
+
+.doc-block-icon .tc-image-edit-button {
+        fill: <<colour primary>>;
+}
+
+.doc-block-icon .tc-image-list-number {
+        fill: <<colour external-link-foreground>>;
+}
+
+.doc-block-icon .tc-image-save-button {
+        fill: <<colour download-background>>;
+}
