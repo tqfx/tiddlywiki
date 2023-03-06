@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+git submodule update --init --recursive
+tiddlywiki +themes/tiddlywiki/readonly --build static external-js "$@"
+sed -i 's|"files/|"../files/|g' output/static/*.html
+sed -i 's|"favicon.ico"|"files/images/favicon.png"|g' output/static.html
+sed -i 's|"favicon.ico"|"../files/images/favicon.png"|g' output/static/*.html
+sed -i 's|%24%3A%2Fcore%2Ftemplates%2Ftiddlywiki5.js|tiddlywiki.js|g' output/*.*
+sed -i 's|snowwhite"}|readonly"}|g' output/index.html
+cp robots.txt output || ls *.txt
+cp -r files output || exit 0

@@ -16,11 +16,11 @@ jobs:
           lfs: true
           submodules: true
       - run: npm install -g tiddlywiki
-      - run: bash build.sh build
+      - run: bash build
       - uses: actions/upload-artifact@v2
         with:
           name: index
-          path: build
+          path: output
           if-no-files-found: ignore
       - uses: peaceiris/actions-gh-pages@v3
         with:
@@ -29,4 +29,4 @@ jobs:
           disable_nojekyll: true
           publish_branch: gh-pages
           force_orphan: true
-          publish_dir: build
+          publish_dir: output
