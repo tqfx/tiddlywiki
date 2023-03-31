@@ -31,18 +31,18 @@ $f$@@color:$c$;background-color:$bg$;$t$$txt$$t$
 @@
 \end
 
-\define text-ct(txt)
+\define text-ct(_)
 <p align="center">
 
-$txt$
+$_$
 
 </p>
 \end
 
 \define code(language:"",src:"")
 <div>
-<$macrocall $name="copy-to-clipboard-above-right" src=<<__src__>>/>
-<$codeblock code=<<__src__>> language=<<__language__>>/>
+<$macrocall $name="copy-to-clipboard-above-right" src=<<__src__>> />
+<$codeblock code=<<__src__>> language=<<__language__>> />
 <div>
 \end
 
@@ -51,22 +51,22 @@ img(src,attribute="",prefix:"files/images/")
 [img $attribute$[$prefix$$src$]]
 \end
 
-<$macrocall $name="copy-to-clipboard-above-right" src="""<$codeblock language="" code=""/>"""/>
+<$macrocall $name="copy-to-clipboard-above-right" src="""<$codeblock language="" code="" />""" />
 
 ```html
-<$codeblock language="" code=""/>
+<$codeblock language="" code="" />
 ```
 
-<$macrocall $name="copy-to-clipboard-above-right" src="""<$macrocall $name="copy-to-clipboard-above-right" src=""/>"""/>
+<$macrocall $name="copy-to-clipboard-above-right" src="""<$macrocall $name="copy-to-clipboard-above-right" src="" />""" />
 
 ```html
-<$macrocall $name="copy-to-clipboard-above-right" src=""/>
+<$macrocall $name="copy-to-clipboard-above-right" src="" />
 ```
 
 <$macrocall $name="copy-to-clipboard-above-right" src="""<p align="center">
 
 </p>
-"""/>
+""" />
 
 ```html
 <p align="center">
@@ -75,7 +75,8 @@ img(src,attribute="",prefix:"files/images/")
 ```
 
 <$macrocall $name="copy-to-clipboard-above-right" src="""$$$text/vnd.tiddlywiki>text/html
-$$$"""/>
+$$$
+""" />
 
 ```
 $$$text/vnd.tiddlywiki>text/html

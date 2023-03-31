@@ -9,6 +9,7 @@ title: $:/editions/tqfx/admonition_macros
 <div>
 
 $_$
+
 </div>
 </div>
 \end
@@ -19,6 +20,7 @@ $_$
 <div>
 
 $_$
+
 </div>
 </div>
 \end
@@ -29,6 +31,7 @@ $_$
 <div>
 
 $_$
+
 </div>
 </div>
 \end
@@ -39,6 +42,7 @@ $_$
 <div>
 
 $_$
+
 </div>
 </div>
 \end
@@ -49,6 +53,7 @@ $_$
 <div>
 
 $_$
+
 </div>
 </div>
 \end
@@ -59,6 +64,7 @@ $_$
 <div>
 
 $_$
+
 </div>
 </div>
 \end
@@ -69,6 +75,7 @@ $_$
 <div>
 
 $_$
+
 </div>
 </div>
 \end
@@ -79,6 +86,7 @@ $_$
 <div>
 
 $_$
+
 </div>
 </div>
 \end
@@ -88,22 +96,25 @@ $_$
 <div>
 
 text
+
 </div>
 </div>
-"""/>
+""" />
 <$codeblock language="html" code= """<div class="doc-icon-block">
 <div class="doc-block-icon">{{$:/core/images/}}</div>
 <div>
 
 text
-</div>
-</div>"""/>
 
-| done | {{$:/core/images/save-button}} |<$macrocall $name="copy-to-clipboard-above-right" src="$:/core/images/save-button"/>[[$:/core/images/save-button]] |
-| help | {{$:/core/images/help}} |<$macrocall $name="copy-to-clipboard-above-right" src="$:/core/images/help"/>[[$:/core/images/help]] |
-| note | {{$:/core/images/edit-button}} |<$macrocall $name="copy-to-clipboard-above-right" src="$:/core/images/edit-button"/>[[$:/core/images/edit-button]] |
-| tip | {{$:/core/images/tip}} |<$macrocall $name="copy-to-clipboard-above-right" src="$:/core/images/tip"/>[[$:/core/images/tip]] |
-| warning | {{$:/core/images/warning}} |<$macrocall $name="copy-to-clipboard-above-right" src="$:/core/images/warning"/>[[$:/core/images/warning]] |
-| missing | {{$:/core/images/cancel-button}} |<$macrocall $name="copy-to-clipboard-above-right" src="$:/core/images/cancel-button"/>[[$:/core/images/cancel-button]] |
-| list | {{$:/core/images/list-number}} |<$macrocall $name="copy-to-clipboard-above-right" src="$:/core/images/list-number"/>[[$:/core/images/list-number]] |
-| quote | {{$:/core/images/quote}} |<$macrocall $name="copy-to-clipboard-above-right" src="$:/core/images/quote"/>[[$:/core/images/quote]] |
+</div>
+</div>
+""" />
+
+| done | {{$:/core/images/save-button}} |<$macrocall $name="copy-to-clipboard-above-right" src="$:/core/images/save-button" />[[$:/core/images/save-button]] |
+| help | {{$:/core/images/help}} |<$macrocall $name="copy-to-clipboard-above-right" src="$:/core/images/help" />[[$:/core/images/help]] |
+| note | {{$:/core/images/edit-button}} |<$macrocall $name="copy-to-clipboard-above-right" src="$:/core/images/edit-button" />[[$:/core/images/edit-button]] |
+| tip | {{$:/core/images/tip}} |<$macrocall $name="copy-to-clipboard-above-right" src="$:/core/images/tip" />[[$:/core/images/tip]] |
+| warning | {{$:/core/images/warning}} |<$macrocall $name="copy-to-clipboard-above-right" src="$:/core/images/warning" />[[$:/core/images/warning]] |
+| missing | {{$:/core/images/cancel-button}} |<$macrocall $name="copy-to-clipboard-above-right" src="$:/core/images/cancel-button" />[[$:/core/images/cancel-button]] |
+| list | {{$:/core/images/list-number}} |<$macrocall $name="copy-to-clipboard-above-right" src="$:/core/images/list-number" />[[$:/core/images/list-number]] |
+| quote | {{$:/core/images/quote}} |<$macrocall $name="copy-to-clipboard-above-right" src="$:/core/images/quote" />[[$:/core/images/quote]] |

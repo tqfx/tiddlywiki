@@ -11,7 +11,7 @@ title: $:/editions/tqfx/admonition_styles
 .doc-block-icon {
 	position: absolute;
 	left: -3em;
-        top: 0.2em;
+	top: 0.2em;
 }
 
 .doc-block-icon .tc-image-help {
@@ -27,17 +27,17 @@ title: $:/editions/tqfx/admonition_styles
 }
 
 .doc-block-icon .tc-image-cancel-button {
-        fill: <<colour dirty-indicator>>;
+	fill: <<colour dirty-indicator>>;
 }
 
 .doc-block-icon .tc-image-edit-button {
-        fill: <<colour primary>>;
+	fill: <<colour primary>>;
 }
 
 .doc-block-icon .tc-image-list-number {
-        fill: <<colour external-link-foreground>>;
+	fill: <<colour external-link-foreground>>;
 }
 
 .doc-block-icon .tc-image-save-button {
-        fill: <<colour download-background>>;
+	fill: <<colour download-background>>;
 }
