@@ -1,0 +1,6 @@
+title: $:/config/FileSystemPaths
+
+[is[system]search-replace:g:regexp[\$:/],[]addprefix[_system/]]
+[tag[Journal]addprefix[_journal/]]
+[tag[日志]addprefix[_journal/]]
+[!has[draft.of]]

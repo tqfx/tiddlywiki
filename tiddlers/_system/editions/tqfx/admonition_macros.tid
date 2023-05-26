@@ -1,4 +1,4 @@
-tags: $:/tags/Macro tqfx
+tags: $:/tags/Macro
 title: $:/editions/tqfx/admonition_macros
 
 \define .icon(_) <span class="doc-icon">{{$_$}}</span>
